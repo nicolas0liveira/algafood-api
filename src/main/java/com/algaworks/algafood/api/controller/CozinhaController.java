@@ -30,13 +30,10 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @RequestMapping(value = "/cozinhas", produces = { MediaType.APPLICATION_JSON_VALUE , MediaType.APPLICATION_XML_VALUE})
 public class CozinhaController {
 
-//	@Autowired
-//	private CozinhaRepository cozinhaRepository;
-	
 	@Autowired
 	private CadastroCozinhaService cadastroCozinha;
 	
-	@GetMapping
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Cozinha> listar() {
 		return cadastroCozinha.listar();
 	}
@@ -68,9 +65,9 @@ public class CozinhaController {
 		Optional<Cozinha> cozinhaAtual = cadastroCozinha.buscar(cozinhaId);
 		
 		if (cozinhaAtual.isPresent()) {
-			BeanUtils.copyProperties(cozinha, cozinhaAtual.get(), "id");
+			BeanUtils.copyProperties(cozinha, cozinhaAtual.get(), "id"); //ignora a copia da prop id
 			
-			Cozinha cozinhaSalva= cadastroCozinha.salvar(cozinhaAtual.get());
+			Cozinha cozinhaSalva = cadastroCozinha.salvar(cozinhaAtual.get());
 			return ResponseEntity.ok(cozinhaSalva);
 		}
 		

@@ -1,2 +1,0 @@
-# algafood-api
-projeto algaworks

@@ -14,7 +14,8 @@ public interface CozinhaRepository extends JpaRepository<Cozinha, Long> {
 	//spdjpa-query-keywords: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 
 	List<Cozinha> findTodasByNomeContaining(String nome);
-	Optional<Cozinha> findByNome(String nome);//é preciso garanti que tem uma apenas... é possível usar apenas Cozinha sem optional tb
+	Optional<Cozinha> findByNome(String nome);//é preciso garantir que tem uma apenas... é possível usar apenas Cozinha sem optional tb
 	
 	boolean existsByNome(String nome);
+
 } 

@@ -1,4 +1,4 @@
-package com.algaworks.algafood.infraestructure.repository.spec;
+package com.algaworks.algafood.infrastructure.repository.spec;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

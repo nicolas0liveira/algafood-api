@@ -14,7 +14,7 @@ import com.algaworks.algafood.di.service.ClienteAtivadoEvent;
 public class NotificacaoService {
 	
 	@Autowired
-	private List<Notificador> notificadores;
+	private List<Notificador> notificadores; // todos os notificadores disponíveis
 	
 	@EventListener
 	public void clienteAtivadoListener(ClienteAtivadoEvent event) {

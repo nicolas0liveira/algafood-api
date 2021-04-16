@@ -1,4 +1,4 @@
-package com.algaworks.algafood.infraestructure.repository;
+package com.algaworks.algafood.infrastructure.repository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import org.springframework.util.StringUtils;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.reposiroty.RestauranteRepository;
 import com.algaworks.algafood.domain.reposiroty.RestauranteRepositoryQueries;
-import com.algaworks.algafood.infraestructure.repository.spec.RestauranteSpecs;
+import com.algaworks.algafood.infrastructure.repository.spec.RestauranteSpecs;
 
 /**
  	Contém as consultas customizadas, que são complexas e não devem ser implementadas com os facilitadores do spdjpa

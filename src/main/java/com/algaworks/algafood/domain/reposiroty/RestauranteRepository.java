@@ -15,6 +15,13 @@ import com.algaworks.algafood.domain.model.Restaurante;
 public interface RestauranteRepository extends CustomJpaRepository<Restaurante, Long>
 			, RestauranteRepositoryQueries/*consultas customizadas*/, JpaSpecificationExecutor<Restaurante>/*para uso genérico dos predicates*/ {
 	
+	//sobrescrevendo a implementacao do findAll do hibernate
+	// Se um restaurante não tiver nenhuma forma de pagamento associada a ele,
+	// esse restaurante não será retornado usando JOIN FETCH r.formasPagamento.
+	// Para resolver isso, temos que usar LEFT JOIN FETCH r.formasPagamento
+	@Query("from Restaurante r left join fetch r.cozinha left join fetch r.formasPagamento")
+	List<Restaurante> findAll();
+	
 	//spdjpa-query-keywords: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 	
 	List<Restaurante> queryByTaxaFreteBetween(BigDecimal taxaInicial, BigDecimal taxaFinal);

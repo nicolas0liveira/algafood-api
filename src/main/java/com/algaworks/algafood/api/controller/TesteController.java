@@ -13,7 +13,7 @@ import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.reposiroty.CozinhaRepository;
 import com.algaworks.algafood.domain.reposiroty.RestauranteRepository;
-import com.algaworks.algafood.infraestructure.repository.spec.RestauranteSpecs;
+import com.algaworks.algafood.infrastructure.repository.spec.RestauranteSpecs;
 
 @RestController
 @RequestMapping("/teste")

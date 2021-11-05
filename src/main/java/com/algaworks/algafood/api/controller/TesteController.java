@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Restaurante;
-import com.algaworks.algafood.domain.reposiroty.CozinhaRepository;
-import com.algaworks.algafood.domain.reposiroty.RestauranteRepository;
+import com.algaworks.algafood.domain.repository.CozinhaRepository;
+import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import com.algaworks.algafood.infrastructure.repository.spec.RestauranteSpecs;
 
 @RestController
@@ -92,9 +92,5 @@ public class TesteController {
 					RestauranteSpecs.comNomeSemelhante(nome)));
 	}
 	
-	@GetMapping("/restaurantes/primeiro")
-	public Optional<Restaurante> restaurantePrimeiro() {
-		return restauranteRepository.buscarPrimeiro();
-	}
 }
 
